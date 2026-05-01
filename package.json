@@ -7,6 +7,6 @@
   },
   "scripts": {
     "build": "cd frontend && npm install --include=dev && npm run build && cd ../backend && npm install && npx prisma generate",
-    "start": "cd backend && npx prisma migrate deploy && npm start"
+    "start": "cd backend && npm start"
   }
 }
