@@ -15,11 +15,15 @@ const SALT_ROUNDS = 12;
 /**
  * Register a new user
  */
-export const register = async ({ name, email, password }) => {
+export const register = async ({ name, email, password, role }) => {
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) {
     throw ApiError.conflict('Email already registered');
   }
+
+  // Validate role — only allow ADMIN or MEMBER
+  const validRoles = ['ADMIN', 'MEMBER'];
+  const selectedRole = validRoles.includes(role) ? role : 'MEMBER';
 
   const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
 
@@ -28,6 +32,7 @@ export const register = async ({ name, email, password }) => {
       name,
       email,
       password: hashedPassword,
+      role: selectedRole,
     },
     select: {
       id: true,

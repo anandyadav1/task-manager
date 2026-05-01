@@ -20,6 +20,17 @@
 .auth-spinner{width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
 .auth-link{text-align:center;margin-top:24px;font-size:14px;color:#64748b}
 .auth-link a{font-weight:500;color:#6366f1;text-decoration:none}
+.auth-role-selector{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.auth-role-option{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:2px solid #e2e8f0;cursor:pointer;transition:all .2s;background:#fff}
+.auth-role-option input[type="radio"]{display:none}
+.auth-role-option svg{color:#94a3b8;flex-shrink:0;transition:color .2s}
+.auth-role-option div{display:flex;flex-direction:column}
+.auth-role-title{font-size:14px;font-weight:600;color:#334155}
+.auth-role-desc{font-size:11px;color:#94a3b8;margin-top:1px}
+.auth-role-option:hover{border-color:#a5b4fc}
+.auth-role-option.selected{border-color:#6366f1;background:linear-gradient(135deg,rgba(99,102,241,.05),rgba(139,92,246,.05));box-shadow:0 0 0 1px rgba(99,102,241,.1)}
+.auth-role-option.selected svg{color:#6366f1}
+.auth-role-option.selected .auth-role-title{color:#4f46e5}
 .notfound{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f8fafc}
 .notfound-content{text-align:center;animation:fadeIn .3s ease-out}
 .notfound-404{font-size:96px;font-weight:900;background:linear-gradient(to right,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
