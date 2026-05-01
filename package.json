@@ -4,5 +4,9 @@
   "private": true,
   "engines": {
     "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run prisma:generate --prefix backend",
+    "start": "npm run prisma:migrate:deploy --prefix backend && npm start --prefix backend"
   }
 }
