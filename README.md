@@ -122,8 +122,9 @@ npm run dev
 cd frontend
 cp .env.example .env
 npm install
-npm run dev
+npm run dev 
 ```
+
 
 ### 4. Open in browser
 - Frontend: http://localhost:5173
