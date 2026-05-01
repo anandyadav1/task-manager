@@ -1,0 +1,20 @@
+.notifs{padding:32px;max-width:768px;margin:0 auto;animation:fadeIn .25s ease-out}
+.notifs-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.notifs-header h1{font-size:24px;font-weight:700;color:#0f172a}
+.notifs-markall{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:12px;font-size:14px;font-weight:500;color:#6366f1;border:1px solid #c7d2fe;background:none;cursor:pointer}
+.notifs-markall:hover{background:#eef2ff}
+.notifs-empty{text-align:center;padding:80px 0}
+.notifs-empty-icon{color:#cbd5e1;margin:0 auto 16px}
+.notifs-empty p{color:#94a3b8;font-size:15px}
+.notifs-list{display:flex;flex-direction:column;gap:8px}
+.notif-item{display:flex;align-items:center;gap:16px;padding:16px;border-radius:16px;border:1px solid #e2e8f0;background:#fff;transition:background .15s}
+.notif-item.unread{background:#eef2ff;border-color:#c7d2fe}
+.notif-item-body{flex:1;min-width:0}
+.notif-item-msg{font-size:14px;color:#334155}
+.notif-item-time{font-size:12px;color:#94a3b8;margin-top:4px}
+.notif-item-actions{display:flex;gap:4px;flex-shrink:0}
+.notif-btn{padding:8px;border-radius:12px;background:none;border:none;cursor:pointer;transition:all .15s}
+.notif-btn.read{color:#10b981}.notif-btn.read:hover{background:#ecfdf5}
+.notif-btn.delete{color:#94a3b8}.notif-btn.delete:hover{background:#fef2f2;color:#ef4444}
+.notifs-skeleton{display:flex;flex-direction:column;gap:12px}
+.notifs-skel{height:64px;background:linear-gradient(90deg,#e2e8f0 25%,#f1f5f9 50%,#e2e8f0 75%);background-size:200px 100%;animation:shimmer 1.5s infinite;border-radius:16px}

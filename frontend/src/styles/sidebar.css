@@ -1,0 +1,134 @@
+.sidebar {
+  position: fixed;
+  left: 0; top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  border-right: 1px solid #1e293b;
+  z-index: 40;
+  transition: width 0.3s ease;
+}
+.sidebar.open { width: 260px; }
+.sidebar.closed { width: 72px; }
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  height: 64px;
+  border-bottom: 1px solid #1e293b;
+}
+.sidebar-logo-icon {
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+.sidebar-logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 16px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.sidebar-link:hover { background: #1e293b; color: #e2e8f0; }
+.sidebar-link.active { background: rgba(99,102,241,0.15); color: #fff; }
+.sidebar-link-icon { flex-shrink: 0; }
+
+.sidebar-user {
+  padding: 12px;
+  border-top: 1px solid #1e293b;
+}
+.sidebar-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+}
+.sidebar-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.sidebar-user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar-user-email {
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+.sidebar-logout:hover { background: rgba(239,68,68,0.1); color: #fca5a5; }
+
+.sidebar-toggle {
+  position: absolute;
+  right: -12px;
+  top: 80px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+.sidebar-toggle:hover { transform: scale(1.1); }
