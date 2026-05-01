@@ -1,8 +1,9 @@
 [build]
 builder = "NIXPACKS"
+buildCommand = "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend && npm run prisma:generate --prefix backend"
 
 [deploy]
-startCommand = "node server.js"
+startCommand = "npm run prisma:migrate:deploy --prefix backend && npm start --prefix backend"
 healthcheckPath = "/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"

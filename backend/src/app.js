@@ -90,12 +90,19 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/admin', adminRoutes);
 
-// ─── 404 Handler ─────────────────────────────────────────
-app.use('*', (req, res) => {
+// ─── 404 Handler for API Routes ──────────────────────────
+app.use('/api/*', (req, res) => {
   res.status(404).json({
     success: false,
-    message: `Route ${req.originalUrl} not found`,
+    message: `API Route ${req.originalUrl} not found`,
   });
+});
+
+// ─── Serve Frontend in Production ────────────────────────
+app.use(express.static(join(__dirname, '../../frontend/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, '../../frontend/dist/index.html'));
 });
 
 // ─── Error Handler ───────────────────────────────────────
